@@ -28,3 +28,30 @@ function registerUser(){
         })
     }
 }
+function login(){
+    let username=$('#LoginName').val()
+    let password=$('#password').val()
+    if(username===""||password==="")alert("fill username and password before login")
+    else{
+        let user={
+            username:username,
+            password:password
+        }
+        $.ajax({
+            contentType:"application/json",
+            method:"POST",
+            url:"http://localhost:8080/api/signin",
+            data: JSON.stringify(user),
+            success:function (data){
+                if(data==="InvalidUser")alert(data)
+                else if(data==="InvalidPassword")alert(data)
+                else{
+                    let jwt=data.token;
+                    localStorage.setItem("token", JSON.stringify(jwt))
+                    if(data.roles[0].authority==="HOST")alert("HOST")
+                    else if(data.roles[0].authority==="USER")alert("USER")
+                }
+            }
+        })
+    }
+}
