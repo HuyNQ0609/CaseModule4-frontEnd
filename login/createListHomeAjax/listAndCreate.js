@@ -30,3 +30,38 @@ function showAllHome() {
         }
     })
 }
+
+
+function addNewHome() {
+    let name = $('#name').val()
+    let types = $('#types').val()
+    let address = $('#address').val()
+    let numberOfBathroom = $('#numberOfBathroom').val()
+    let numberOfBedroom = $('#numberOfBedroom').val()
+    let description = arrayPicture().values()
+    const arrayImg = document.getElementsByName('image');
+    console.log(arrayImg);
+
+}
+
+function arrayPicture() {
+    var input = document.getElementsByName('image');
+    var value = new Array();
+    for (let i = 0; i < input.length; i++) {
+        value[i] = input[i].value;
+    }
+    return value;
+}
+
+
+function inputPicture() {
+    let context = document.getElementById("inputPicture").innerHTML
+    context += `<div class="form-group">
+                                            <label for="property-images">Chose Images :</label>
+                                            <input class="form-control" type="file" id="property-images" multiple>
+                                        </div>`
+    document.getElementById("inputPicture").innerHTML = context
+    event.preventDefault()
+}
+
+showAllHome()
