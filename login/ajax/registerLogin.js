@@ -6,8 +6,8 @@ function registerUser(){
     let role=$(".signuprole:checked").val();
     if(fullname===""||signupLoginName===""||password===""||role===undefined)alert("fill the form before register")
     else if(fullname.length>50||fullname.length<6)alert("fullname have 6 to 50 letters")
-    else if(signupLoginName.length>50||signupLoginName.length<6)alert("login name have 6 to 50 letters")
-    else if(password.length>50||password.length<6)alert("password have 6 to 50 letters")
+    else if(signupLoginName.length>32||signupLoginName.length<6)alert("login name have 6 to 32 letters")
+    else if(password.length>8||password.length<6)alert("password have 6 to 8 letters")
     else if(password!==rewritepassword)alert("invalid rewritePassword")
     else{
         let user={
