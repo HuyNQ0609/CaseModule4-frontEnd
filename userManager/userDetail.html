@@ -36,6 +36,8 @@
         <link rel="stylesheet" href="../templateFromTuong/assets/css/wizard.css">
         <link rel="stylesheet" href="../templateFromTuong/assets/css/style.css">
         <link rel="stylesheet" href="../templateFromTuong/assets/css/responsive.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     </head>
     <body>
 
@@ -235,32 +237,59 @@
                                 </div>
 
                                 <div class="col-sm-3 padding-top-25">
-                                    <div class="form-group">
-                                        <label>Full name</label>
-                                        <input id="fullName" type="text" class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Username</label>
-                                        <input id="username" type="text" class="form-control">
-                                    </div>
-                                    <div>
-                                        <label>Password</label>
-                                        <input id="password" type="text" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="col-sm-3 padding-top-25">
-                                    <div class="form-group">
-                                        <label>Email</label>
-                                        <input type="text" id="email" class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Phone</label>
-                                        <input type="text" id="phoneNumber" class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Address</label>
-                                        <input id="address" type="text" class="form-control">
-                                    </div>
+                                    <table id="viewUser">
+                                        <input type="hidden" name="id" id="id"/>
+                                        <tr>
+                                            <th>Full name: </th>
+                                            <td id="fullName"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Username: </th>
+                                            <td id="username"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Password: </th>
+                                            <td id="password"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Email: </th>
+                                            <td id="email"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Phone: </th>
+                                            <td id="phoneNumber"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Address: </th>
+                                            <td id="address"></td>
+                                        </tr>
+                                    </table>
+<!--                                    <div class="form-group">-->
+<!--                                        <label>Full name</label>-->
+<!--                                        <input id="fullName" type="text" class="form-control">-->
+<!--                                    </div>-->
+<!--                                    <div class="form-group">-->
+<!--                                        <label>Username</label>-->
+<!--                                        <input id="username" type="text" class="form-control">-->
+<!--                                    </div>-->
+<!--                                    <div>-->
+<!--                                        <label>Password</label>-->
+<!--                                        <input id="password" type="text" class="form-control">-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="col-sm-3 padding-top-25">-->
+<!--                                    <div class="form-group">-->
+<!--                                        <label>Email</label>-->
+<!--                                        <input type="text" id="email" class="form-control">-->
+<!--                                    </div>-->
+<!--                                    <div class="form-group">-->
+<!--                                        <label>Phone</label>-->
+<!--                                        <input type="text" id="phoneNumber" class="form-control">-->
+<!--                                    </div>-->
+<!--                                    <div class="form-group">-->
+<!--                                        <label>Address</label>-->
+<!--                                        <input id="address" type="text" class="form-control">-->
+<!--                                    </div>-->
                                 </div>
                                 <div class="col-sm-5 col-sm-offset-1"  style="text-align: right">
                                     <br>
@@ -415,6 +444,7 @@
 
         </div>
 
+        <script type="text/javascript" src="ajax/userMethod.js"></script>
 
         <script src="assets/js/vendor/modernizr-2.6.2.min.js"></script>
         <script src="assets/js//jquery-1.10.2.min.js"></script>
