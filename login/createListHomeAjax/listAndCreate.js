@@ -9,7 +9,7 @@ function showAllHome() {
                 context += `<div class="col-sm-6 col-md-4 p0">
                             <div class="box-two proerty-item">
                             <div class="item-thumb">
-                                    <a href="property-1.html"><img src="${data[i].pictures.src}"></a>
+                                    <a href="property-1.html"><img src="${data[i].pictures.src}"><button onclick="showHomeDetail(${data[i].id})"></button></a>
                                 </div>
 
                                 <div class="item-entry overflow">
