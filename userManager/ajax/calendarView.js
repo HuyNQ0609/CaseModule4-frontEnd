@@ -1,42 +1,3 @@
-function showHomeDetail() {
-    let token = JSON.parse(localStorage.getItem("token"));
-    console.log(token)
-
-    let url = window.location.search
-    let urlParams = new URLSearchParams(url);
-    let homeid = urlParams.get('id')
-
-    $.ajax({
-        headers: {
-            "Authorization": "Bearer" + token
-        },
-        contentType: "application/json",
-        method: "GET",
-        url: "http://localhost:8080/homes/home/owner/" + homeid,
-        success(data) {
-            console.log(data)
-            let image=""
-            for (let i = 0; i < data.pictures.length; i++) {
-                image+=`<li data-thumb="${data.pictures[i].src}">
-                            <img src="${data.pictures[i].src}"/>
-                        </li>`
-            }
-            document.getElementById("image-gallery").innerHTML=image
-            let homenamehtml=data.name;
-            document.getElementById("homename").innerHTML=homenamehtml
-            let price=data.price+" VND"
-            document.getElementById("price").innerHTML=price
-            let numberofbedroom=data.numberOfBedroom
-            document.getElementById("numberofBedroom").innerHTML=numberofbedroom
-            let numberofbathroom=data.numberOfBathroom
-            document.getElementById("numberOfBathroom").innerHTML=numberofbathroom
-            let homeDescription=data.description
-            document.getElementById("homeDescription").innerHTML=homeDescription
-        }
-    })
-}
-showHomeDetail()
-
 const daysTag = document.querySelector(".days"),
     currentDate = document.querySelector(".current-date"),
     prevNextIcon = document.querySelectorAll(".icons span");
@@ -117,36 +78,3 @@ prevNextIcon.forEach(icon => {
         renderCalendar();
     });
 });
-
-function changeStatus(status, day) {
-    let input = prompt("Please enter status(ordered,fixing,free):", status)
-    if (input !== "ordered" && input !== "fixing" && input !== "free") alert("wronginput")
-    else {
-        let token = JSON.parse(localStorage.getItem("token"));
-        console.log(token)
-        let url = window.location.search
-        let urlParams = new URLSearchParams(url);
-        let homeid = urlParams.get('id')
-        let inputdate = new Date(currYear, currMonth, day+1).toISOString().slice(0,10);
-        let datesent = {
-            "day": inputdate,
-            "home": {
-                "id":homeid
-            },
-            "status": {
-                "name":input.toUpperCase()
-            }
-        }
-        console.log(datesent)
-        $.ajax({
-            headers: {
-                "Authorization": "Bearer" + token
-            },
-            contentType: "application/json",
-            method: "PATCH",
-            url: "http://localhost:8080/homeday",
-            data: JSON.stringify(datesent),
-            success:renderCalendar
-        })
-    }
-}

@@ -66,3 +66,52 @@ function viewUserInformation() {
     });
 }
 viewUserInformation();
+
+function showHomeDetailUser() {
+    let token = JSON.parse(localStorage.getItem("token"));
+    console.log(token)
+
+    let url = window.location.search
+    let urlParams = new URLSearchParams(url);
+    let homeId = urlParams.get('id')
+
+    $.ajax({
+        headers: {
+            "Authorization": "Bearer" + token
+        },
+        contentType: "application/json",
+        method: "GET",
+        url: "http://localhost:8080/homes/home/owner/" + homeId,
+        success(data) {
+            console.log(data)
+            let image=""
+            for (let i = 0; i < data.pictures.length; i++) {
+                image+=`<li data-thumb="${data.pictures[i].src}">
+                            <img src="${data.pictures[i].src}" alt=""/>
+                        </li>`
+            }
+            if (image !== "") {
+                document.getElementById("image-gallery").innerHTML = image
+            }
+            let homeName = data.name;
+            document.getElementById("houseName-1").innerHTML = homeName
+            let priceHouse = data.price + " VND";
+            document.getElementById("price-1").innerHTML = priceHouse
+            let bedroom = data.numberOfBedroom;
+            document.getElementById("bedroom-1").innerHTML = bedroom
+            let bathroom = data.numberOfBathroom;
+            document.getElementById("bathroom-1").innerHTML = bathroom
+            let descriptionHouse = data.description;
+            document.getElementById("description-1").innerHTML = descriptionHouse
+            let ownerName = data["owner"].fullName;
+            document.getElementById("ownerName").innerHTML = ownerName
+            let ownerAddress = data["owner"].address;
+            document.getElementById("ownerAddress").innerHTML = ownerAddress
+            let ownerEmail = data["owner"].email;
+            document.getElementById("ownerEmail").innerHTML = ownerEmail
+            let ownerPhone = data["owner"].phone;
+            document.getElementById("ownerPhone").innerHTML = ownerPhone
+        }
+    })
+}
+showHomeDetailUser()
