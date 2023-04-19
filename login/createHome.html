@@ -15,7 +15,7 @@
     <meta name="author" content="Kimarotec">
     <meta name="keyword" content="html5, css, bootstrap, property, real-estate theme , bootstrap template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800' rel='stylesheet' type='text/css'>
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -236,7 +236,7 @@
                             <li><a href="#step1" data-toggle="tab">Step 1 </a></li>
                             <li><a href="#step2" data-toggle="tab">Step 2 </a></li>
                             <li><a href="#step3" data-toggle="tab">Step 3 </a></li>
-                            <li><a href="#step4" data-toggle="tab">Finished </a></li>
+                            <li><a href="#step4" data-toggle="tab">Finished</a></li>
                         </ul>
 
                         <div class="tab-content">
@@ -244,57 +244,66 @@
                             <div class="tab-pane" id="step1">
                                 <div class="row p-b-15  ">
                                     <h4 class="info-text"> Let's start with the basic information (with validation)</h4>
-<!--                                    <div class="col-sm-4 col-sm-offset-1">-->
-<!--                                        <div class="picture-container">-->
-<!--                                            <div class="picture">-->
-<!--                                                <img src="assets/img/default-property.jpg" class="picture-src"-->
-<!--                                                     id="wizardPicturePreview" title=""/>-->
-<!--                                                <input type="file" id="wizard-picture" name="image">-->
-<!--                                            </div>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
+                                    <!--                                    <div class="col-sm-4 col-sm-offset-1">-->
+                                    <!--                                        <div class="picture-container">-->
+                                    <!--                                            <div class="picture">-->
+                                    <!--                                                <img src="assets/img/default-property.jpg" class="picture-src"-->
+                                    <!--                                                     id="wizardPicturePreview" title=""/>-->
+                                    <!--                                                <input type="file" id="wizard-picture" name="image">-->
+                                    <!--                                            </div>-->
+                                    <!--                                        </div>-->
+                                    <!--                                    </div>-->
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label>House name <small>(required)</small></label>
-                                            <input name="name" type="text" class="form-control"
+                                            <input name="name" id="name" type="text" class="form-control"
                                                    placeholder="Super villa ...">
                                         </div>
 
 
                                         <div class="form-group">
                                             <label>House type <small>(required)</small></label>
-                                            <select name="type"
+                                            <form
                                                     title="Select your home type" class="selectpicker"
                                                     data-live-search="true"
                                                     data-live-search-style="begins">
-                                                <option>New york, CA</option>
-                                                <option>Paris</option>
-                                                <option>Casablanca</option>
-                                                <option>Tokyo</option>
-                                                <option>Marraekch</option>
-                                                <option>kyoto , shibua</option>
-                                            </select>
+                                                <br>
+                                                <label>
+                                                    <input class="check" value="SINGLEROOM" type="checkbox" name="type">
+                                                    Single Room
+                                                </label><br>
+                                                <label>
+                                                    <input class="check" type="checkbox" value="DOUBLEROOM" name="type">
+                                                    Double Room
+                                                </label><br>
+                                                <label>
+                                                    <input class="check" type="checkbox" value="PRESIDENTROOM"
+                                                           name="type"> President Room
+                                                </label><br>
+                                                <label>
+                                                    <input class="check" type="checkbox" value="VIPROOM" name="type">
+                                                    Vip Room
+                                                </label><br>
+                                                <label>
+                                                    <input class="check" type="checkbox" value="LUXURYROOM" name="type">
+                                                    Luxury Room
+                                                </label><br>
+                                            </form>
                                         </div>
 
                                         <div class="form-group">
                                             <label>Address</label>
-                                            <input name="address" type="text" class="form-control"
+                                            <input name="address" id="address" type="text" class="form-control"
                                                    placeholder="Campuchia...">
                                         </div>
 
-
-                                        <form>
-
-                                            <div id="inputPicture">
-                                                <div class="form-group">
-                                                    <label>Chose Images :</label>
-                                                    <input type="text" name="image" id="image">
-                                                </div>
+                                        <div id="inputPicture">
+                                            <div class="form-group">
+                                                <label>Chose Images :</label>
+                                                <input type="file" name="image" id="image">
                                             </div>
-                                            <button onclick="inputPicture()">+</button>
-                                            <button type="button" onclick=""></button>
-                                        </form>
-
+                                        </div>
+                                        <button onclick="inputPicture()">+</button>
 
                                     </div>
                                 </div>
@@ -308,7 +317,7 @@
                                         <div class="col-sm-12">
                                             <div class="form-group">
                                                 <label>Home Description :</label>
-                                                <textarea name="description" class="form-control"></textarea>
+                                                <textarea id="description" class="form-control"></textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -317,34 +326,20 @@
                                         <div class="col-sm-3">
                                             <div class="form-group">
                                                 <label>Price Home :</label>
-                                                <input class="selectpicker show-tick form-control" name="price">
+                                                <input class="selectpicker show-tick form-control" id="price">
                                             </div>
                                         </div>
-                                        <!--                                        <div class="col-sm-3">-->
-                                        <!--                                            <div class="form-group">-->
-                                        <!--                                                <label>Property City :</label>-->
-                                        <!--                                                <select id="lunchBegins" class="selectpicker" data-live-search="true"-->
-                                        <!--                                                        data-live-search-style="begins" title="Select your city">-->
-                                        <!--                                                    <option>New york, CA</option>-->
-                                        <!--                                                    <option>Paris</option>-->
-                                        <!--                                                    <option>Casablanca</option>-->
-                                        <!--                                                    <option>Tokyo</option>-->
-                                        <!--                                                    <option>Marraekch</option>-->
-                                        <!--                                                    <option>kyoto , shibua</option>-->
-                                        <!--                                                </select>-->
-                                        <!--                                            </div>-->
-                                        <!--                                        </div>-->
                                         <div class="col-sm-3">
                                             <div class="form-group">
                                                 <label>Number of BathRoom :</label>
-                                                <input name="bath" class="selectpicker show-tick form-control">
+                                                <input id="bath" class="selectpicker show-tick form-control">
 
                                             </div>
                                         </div>
                                         <div class="col-sm-3">
                                             <div class="form-group">
                                                 <label>Number of BedRoom :</label>
-                                                <input name="bed" class="selectpicker show-tick form-control">
+                                                <input id="bedr" class="selectpicker show-tick form-control">
 
                                             </div>
                                         </div>
@@ -395,8 +390,9 @@
 
                         <div class="wizard-footer">
                             <div class="pull-right">
-                                <input type='button' class='btn btn-next btn-primary' name='next' onclick="addNewHome()" value='Next'/>
-                                <input type='button' class='btn btn-finish btn-primary ' name='finish' value='Finish'/>
+                                <input type='button' class='btn btn-next btn-primary' name='next' value='Next'/>
+                                <input type='button' class='btn btn-finish btn-primary ' name='finish' value='Finish'
+                                       onclick="addNewHome()"/>
                             </div>
 
                             <div class="pull-left">
