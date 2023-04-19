@@ -17,8 +17,9 @@ const renderCalendar = () => {
     let liTag = "";
     let token = JSON.parse(localStorage.getItem("token"));
     console.log(token)
-    let url = window.location.href
-    let homeid = url.charAt(url.length - 1)
+    let url = window.location.search
+    let urlParams = new URLSearchParams(url);
+    let homeid = urlParams.get('id')
     let datesent = {
         "year": currYear,
         "month": currMonth + 1,
@@ -84,8 +85,9 @@ function changeStatus(status, day) {
     else {
         let token = JSON.parse(localStorage.getItem("token"));
         console.log(token)
-        let url = window.location.href
-        let homeid = url.charAt(url.length - 1)
+        let url = window.location.search
+        let urlParams = new URLSearchParams(url);
+        let homeid = urlParams.get('id')
         let inputdate = new Date(currYear, currMonth + 1, day);
         let datesent = {
             "date": inputdate,
