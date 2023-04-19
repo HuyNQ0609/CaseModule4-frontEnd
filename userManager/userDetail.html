@@ -36,6 +36,8 @@
         <link rel="stylesheet" href="../templateFromTuong/assets/css/wizard.css">
         <link rel="stylesheet" href="../templateFromTuong/assets/css/style.css">
         <link rel="stylesheet" href="../templateFromTuong/assets/css/responsive.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     </head>
     <body>
 
@@ -218,8 +220,7 @@
                         <form action="" method="">
                             <div class="profiel-header">
                                 <h3>
-                                    <b>BUILD</b> YOUR PROFILE <br>
-                                    <small>This information will let us know more about you.</small>
+                                    <b>User information</b>
                                 </h3>
                                 <hr>
                             </div>
@@ -236,75 +237,65 @@
                                 </div>
 
                                 <div class="col-sm-3 padding-top-25">
-                                    <div class="form-group">
-                                        <label>Last Name</label>
-                                        <input name="lastname" type="text" class="form-control" placeholder="Smith...">
-                                    </div> 
-                                    <div class="form-group">
-                                        <label>Email</label>
-                                        <input name="email" type="email" class="form-control" placeholder="andrew@email@email.com.com">
-
-                                    </div>
-                                    <label>Password</label>
-                                    <input name="Password" type="password" class="form-control">
-                                </div>
-                                <div class="col-sm-3 padding-top-25">
-                                    <div class="form-group">
-                                        <div class="form-group">
-                                            <label>Phone</label>
-                                            <input type="phone" class="form-control">
-                                        </div>
-
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Address</label>
-                                        <input name="address" type="text" class="form-control" placeholder="Andrew...">
-                                    </div>
+                                    <table id="viewUser">
+                                        <input type="hidden" name="id" id="id"/>
+                                        <tr>
+                                            <th>Full name: </th>
+                                            <td id="fullName"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Username: </th>
+                                            <td id="username"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Password: </th>
+                                            <td id="password"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Email: </th>
+                                            <td id="email"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Phone: </th>
+                                            <td id="phoneNumber"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Address: </th>
+                                            <td id="address"></td>
+                                        </tr>
+                                    </table>
+<!--                                    <div class="form-group">-->
+<!--                                        <label>Full name</label>-->
+<!--                                        <input id="fullName" type="text" class="form-control">-->
+<!--                                    </div>-->
+<!--                                    <div class="form-group">-->
+<!--                                        <label>Username</label>-->
+<!--                                        <input id="username" type="text" class="form-control">-->
+<!--                                    </div>-->
+<!--                                    <div>-->
+<!--                                        <label>Password</label>-->
+<!--                                        <input id="password" type="text" class="form-control">-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="col-sm-3 padding-top-25">-->
+<!--                                    <div class="form-group">-->
+<!--                                        <label>Email</label>-->
+<!--                                        <input type="text" id="email" class="form-control">-->
+<!--                                    </div>-->
+<!--                                    <div class="form-group">-->
+<!--                                        <label>Phone</label>-->
+<!--                                        <input type="text" id="phoneNumber" class="form-control">-->
+<!--                                    </div>-->
+<!--                                    <div class="form-group">-->
+<!--                                        <label>Address</label>-->
+<!--                                        <input id="address" type="text" class="form-control">-->
+<!--                                    </div>-->
                                 </div>
                                 <div class="col-sm-5 col-sm-offset-1"  style="text-align: right">
                                     <br>
                                     <input type='button' class='btn btn-finish btn-primary' name='finish' value='Finish' />
                                 </div>
                             </div>
-
-<!--                            <div class="clear">-->
-<!--                                <br>-->
-<!--                                <hr>-->
-<!--                                <br>-->
-<!--                                <div class="col-sm-5 col-sm-offset-1">-->
-<!--                                    <div class="form-group">-->
-<!--                                        <label>Facebook :</label>-->
-<!--                                        <input name="Facebook" type="text" class="form-control" placeholder="https://facebook.com/user">-->
-<!--                                    </div>-->
-<!--                                    <div class="form-group">-->
-<!--                                        <label>Twitter :</label>-->
-<!--                                        <input name="Twitter" type="text" class="form-control" placeholder="https://Twitter.com/@user">-->
-<!--                                    </div>-->
-<!--                                    <div class="form-group">-->
-<!--                                        <label>Website :</label>-->
-<!--                                        <input name="website" type="text" class="form-control" placeholder="https://yoursite.com/">-->
-<!--                                    </div>-->
-<!--                                </div>  -->
-
-<!--                                <div class="col-sm-5">-->
-<!--                                    <div class="form-group">-->
-<!--                                        <label>Public email :</label>-->
-<!--                                        <input name="p-email" type="email" class="form-control" placeholder="p-email@rmail.com">-->
-<!--                                    </div>-->
-<!--                                    <div class="form-group">-->
-<!--                                        <label>Phone :</label>-->
-<!--                                        <input name="Phone" type="text" class="form-control" placeholder="+1 9090909090">-->
-<!--                                    </div>-->
-<!--                                    <div class="form-group">-->
-<!--                                        <label>FAX :</label>-->
-<!--                                        <input name="FAX" type="text" class="form-control" placeholder="+1 9090909090">-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!-- -->
-<!--                            </div>-->
-                    
-
                             <br>
                     </form>
 
@@ -453,6 +444,7 @@
 
         </div>
 
+        <script type="text/javascript" src="ajax/userMethod.js"></script>
 
         <script src="assets/js/vendor/modernizr-2.6.2.min.js"></script>
         <script src="assets/js//jquery-1.10.2.min.js"></script>
