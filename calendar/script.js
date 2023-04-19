@@ -88,7 +88,7 @@ function changeStatus(status, day) {
         let url = window.location.search
         let urlParams = new URLSearchParams(url);
         let homeid = urlParams.get('id')
-        let inputdate = new Date(currYear, currMonth + 1, day);
+        let inputdate = new Date(currYear, currMonth, day+1).toISOString().slice(0,10);
         let datesent = {
             "day": inputdate,
             "home": {
