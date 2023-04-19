@@ -41,25 +41,28 @@ function addNewHome() {
     let description = $('#description').val()
     let price = $('#price').val()
     let arrayImg = arrayPicture();
+    let token = JSON.parse(localStorage.getItem("token"));
+    console.log(token)
     let newHome = {
         name: name,
-        type: arrayHomeType(),
+        types: arrayHomeType(),
         address: address,
         numberOfBedroom: numberOfBedroom,
         numberOfBathroom: numberOfBathroom,
         description: description,
         price: price,
-        arrayImg: arrayPicture()
+        pictures: arrayImg
     };
     console.log(newHome)
     $.ajax({
         headers: {
             'Accept': 'application/json',
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            "Authorization": "Bearer" + token
         },
         type: "POST",
         data: JSON.stringify(newHome),
-        url: "http://localhost:8080/homes",
+        url: "http://localhost:8080/homes/create",
         success() {
             showAllHome()
         }
@@ -69,11 +72,11 @@ function addNewHome() {
 }
 
 function arrayHomeType() {
-        var input = document.getElementsByClassName("check")
+        var input = document.getElementsByClassName("icheckbox_square-yellow checked")
         var value = [];
         for (let i = 0; i < input.length; i++) {
             value[i] = {
-                "name": input[i].value
+                "name": input[i].firstChild.attributes.value.value
             }
         }
     return value;
@@ -97,7 +100,7 @@ function inputPicture() {
     context += ` <div id="inputPicture">
 <div class="form-group">
                 <label>Chose Images :</label>
-                <input type="file"  name="image" id="image">
+                <input type="text"  name="image" id="image">
                 </div></div>`
     document.getElementById("inputPicture").innerHTML = context
     event.preventDefault()
