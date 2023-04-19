@@ -81,7 +81,7 @@ prevNextIcon.forEach(icon => {
 
 function changeStatus(status, day) {
     let input = prompt("Please enter status(ordered,fixing,free):", status)
-    if (status !== "ordered" && status !== "fixing" && status !== "free") alert("wronginput")
+    if (input !== "ordered" && input !== "fixing" && input !== "free") alert("wronginput")
     else {
         let token = JSON.parse(localStorage.getItem("token"));
         console.log(token)
@@ -90,18 +90,23 @@ function changeStatus(status, day) {
         let homeid = urlParams.get('id')
         let inputdate = new Date(currYear, currMonth + 1, day);
         let datesent = {
-            "date": inputdate,
-            "home": homeid,
-            "status": status.toUpperCase()
+            "day": inputdate,
+            "home": {
+                "id":homeid
+            },
+            "status": {
+                "name":input.toUpperCase()
+            }
         }
+        console.log(datesent)
         $.ajax({
             headers: {
                 "Authorization": "Bearer" + token
             },
             contentType: "application/json",
-            method: "Patch",
+            method: "PATCH",
             url: "http://localhost:8080/homeday",
-            data: datesent,
+            data: JSON.stringify(datesent),
             success:renderCalendar
         })
     }
