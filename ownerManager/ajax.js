@@ -12,150 +12,141 @@ function showHomeDetail() {
         },
         contentType: "application/json",
         method: "GET",
-        url: "http://localhost:8080/homes/owner/" + homeid,
+        url: "http://localhost:8080/homes/home/owner/" + homeid,
         success(data) {
             console.log(data)
-            let context = ` <div class="col-md-8 single-property-content prp-style-1 ">
-                <div class="row">
-                    <div class="light-slide-item">
-                        <div class="clearfix">
-                            <div class="favorite-and-print">
-                                <a class="add-to-fav" href="#login-modal" data-toggle="modal">
-                                    <i class="fa fa-star-o"></i>
-                                </a>
-                                <a class="printer-icon " href="javascript:window.print()">
-                                    <i class="fa fa-print"></i>
-                                </a>
-                            </div>
-                           
-                            <ul id="image-gallery" class="gallery list-unstyled cS-hidden">
-                                <li data-thumb="assets/img/property-1/property1.jpg">
-                                    <img src="${data.pictures.src}"/>
-                                </li>
-                                <li data-thumb="assets/img/property-1/property2.jpg">
-                                    <img src="${data.pictures.src}"/>
-                                </li>
-                                <li data-thumb="assets/img/property-1/property3.jpg">
-                                    <img src="${data.pictures.src}"/>
-                                </li>
-                                <li data-thumb="assets/img/property-1/property4.jpg">
-                                    <img src="${data.pictures.src}"/>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="single-property-wrapper">
-                    <div class="single-property-header">
-                        <h1 class="property-title pull-left"><input type="text" value="${data.name}">/h1>
-                        <span class="property-price pull-right"><input type="text" value="${data.price}"></span>
-                    </div>
-
-                    <div class="property-meta entry-meta clearfix ">
-
-
-                        <div class="col-xs-6 col-sm-3 col-md-3 p-b-15">
-                                    <span class="property-info icon-area">
-                                        <img src="assets/img/icon/room-orange.png">
-                                    </span>
-                            <span class="property-info-entry">
-                                        <span class="property-info-label">Area</span>
-                                        <span class="property-info-value">3500<b
-                                                class="property-info-unit">Sq Ft</b></span>
-                                    </span>
-                        </div>
-
-                        <div class="col-xs-6 col-sm-3 col-md-3 p-b-15">
-                                    <span class="property-info-icon icon-bed">
-                                        <img src="assets/img/icon/bed-orange.png">
-                                    </span>
-                            <span class="property-info-entry">
-                                        <span class="property-info-label">Bedrooms</span>
-                                        <span class="property-info-value">3</span>
-                                    </span>
-                        </div>
-
-                        <div class="col-xs-6 col-sm-3 col-md-3 p-b-15">
-                                    <span class="property-info-icon icon-bed">
-                                        <img src="assets/img/icon/cars-orange.png">
-                                    </span>
-                            <span class="property-info-entry">
-                                        <span class="property-info-label">Car garages</span>
-                                        <span class="property-info-value">1</span>
-                                    </span>
-                        </div>
-
-                        <div class="col-xs-6 col-sm-3 col-md-3 p-b-15">
-                                    <span class="property-info-icon icon-bath">
-                                        <img src="assets/img/icon/os-orange.png">
-                                    </span>
-                            <span class="property-info-entry">
-                                        <span class="property-info-label">Bathrooms</span>
-                                        <span class="property-info-value">3.5</span>
-                                    </span>
-                        </div>
-
-                        <div class="col-xs-6 col-sm-3 col-md-3 p-b-15">
-                                    <span class="property-info-icon icon-garage">
-                                        <img src="assets/img/icon/room-orange.png">
-                                    </span>
-                            <span class="property-info-entry">
-                                        <span class="property-info-label">Garages</span>
-                                        <span class="property-info-value">2</span>
-                                    </span>
-                        </div>
-
-                        <div class="col-xs-6 col-sm-3 col-md-3 p-b-15">
-                                    <span class="property-info-icon icon-garage">
-                                        <img src="assets/img/icon/shawer-orange.png">
-                                    </span>
-                            <span class="property-info-entry">
-                                        <span class="property-info-label">Garages</span>
-                                        <span class="property-info-value">2</span>
-                                    </span>
-                        </div>
-
-
-                    </div>
-                    <!-- .property-meta -->
-
-                    <div class="section">
-                        <h4 class="s-property-title">Description</h4>
-                        <div class="s-property-content">
-                            <p>Nulla quis dapibus nisl. Suspendisse ultricies Nulla quis dapibus nisl. Suspendisse
-                                ultricies commodo arcu nec pretium. Nullam sed arcu ultricies commodo arcu nec pretium.
-                                Nullam sed arcu ultricies Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu
-                                nec pretium. Nullam sed arcu ultricies Nulla quis dapibus nisl. Suspendisse ultricies
-                                commodo arcu nec pretium. Nullam sed arcu ultricies </p>
-                        </div>
-                    </div>
-                    <!-- End description area  -->
-
-                    <div class="section property-share">
-                        <h4 class="s-property-title">Share width your friends </h4>
-                        <div class="roperty-social">
-                            <ul>
-                                <li><a title="Share this on dribbble " href="#"><img
-                                        src="assets/img/social_big/dribbble_grey.png"></a></li>
-                                <li><a title="Share this on facebok " href="#"><img
-                                        src="assets/img/social_big/facebook_grey.png"></a></li>
-                                <li><a title="Share this on delicious " href="#"><img
-                                        src="assets/img/social_big/delicious_grey.png"></a></li>
-                                <li><a title="Share this on tumblr " href="#"><img
-                                        src="assets/img/social_big/tumblr_grey.png"></a></li>
-                                <li><a title="Share this on digg " href="#"><img
-                                        src="assets/img/social_big/digg_grey.png"></a></li>
-                                <li><a title="Share this on twitter " href="#"><img
-                                        src="assets/img/social_big/twitter_grey.png"></a></li>
-                                <li><a title="Share this on linkedin " href="#"><img
-                                        src="assets/img/social_big/linkedin_grey.png"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                </div>
-            </div>`
+            let image=""
+            for (let i = 0; i < data.pictures.length; i++) {
+                image+=`<li data-thumb="${data.pictures[i].src}">
+                            <img src="${data.pictures[i].src}"/>
+                        </li>`
+            }
+            document.getElementById("image-gallery").innerHTML=image
+            let homenamehtml=data.name;
+            document.getElementById("homename").innerHTML=homenamehtml
+            let price=data.price+" VND"
+            document.getElementById("price").innerHTML=price
+            let numberofbedroom=data.numberOfBedroom
+            document.getElementById("numberofBedroom").innerHTML=numberofbedroom
+            let numberofbathroom=data.numberOfBathroom
+            document.getElementById("numberOfBathroom").innerHTML=numberofbathroom
+            let homeDescription=data.description
+            document.getElementById("homeDescription").innerHTML=homeDescription
         }
     })
+}
+showHomeDetail()
+
+const daysTag = document.querySelector(".days"),
+    currentDate = document.querySelector(".current-date"),
+    prevNextIcon = document.querySelectorAll(".icons span");
+
+let date = new Date(),
+    currYear = date.getFullYear(),
+    currMonth = date.getMonth();
+
+const months = ["January", "February", "March", "April", "May", "June", "July",
+    "August", "September", "October", "November", "December"];
+
+const renderCalendar = () => {
+    let firstDayofMonth = new Date(currYear, currMonth, 1).getDay(),
+        lastDateofMonth = new Date(currYear, currMonth + 1, 0).getDate(),
+        lastDayofMonth = new Date(currYear, currMonth, lastDateofMonth).getDay(),
+        lastDateofLastMonth = new Date(currYear, currMonth, 0).getDate();
+    let liTag = "";
+    let token = JSON.parse(localStorage.getItem("token"));
+    console.log(token)
+    let url = window.location.search
+    let urlParams = new URLSearchParams(url);
+    let homeid = urlParams.get('id')
+    let datesent = {
+        "year": currYear,
+        "month": currMonth + 1,
+        "home": homeid
+    }
+    if (token != null) {
+        $.ajax({
+            headers: {
+                "Authorization": "Bearer" + token
+            },
+            contentType: "application/json",
+            method: "GET",
+            url: "http://localhost:8080/homeday",
+            data: datesent,
+            success: function (data) {
+                console.log(data)
+                for (let i = firstDayofMonth; i > 0; i--) {
+                    liTag += `<li class="inactive">${lastDateofLastMonth - i + 1}</li>`;
+                }
+                for (let i = 1; i <= lastDateofMonth; i++) {
+                    console.log(date.getDate(), new Date().getMonth(), new Date().getFullYear())
+                    let status;
+                    for (let j = 0; j < data.length; j++) {
+                        let s = data[j].day.substring(8, 10);
+                        if (s == i) {
+                            if (data[j].status.name === "ORDERED") status = "ordered";
+                            else if (data[j].status.name === "FIXING") status = "fixing";
+                            else status = "free"
+                        }
+                    }
+                    liTag += `<li class="${status}" onclick="changeStatus('${status}',${i})">${i}</li>`;
+                }
+
+                for (let i = lastDayofMonth; i < 6; i++) {
+                    liTag += `<li class="inactive">${i - lastDayofMonth + 1}</li>`
+                }
+                currentDate.innerText = `${months[currMonth]} ${currYear}`;
+                daysTag.innerHTML = liTag;
+            }
+        })
+    }
+}
+renderCalendar();
+
+prevNextIcon.forEach(icon => {
+    icon.addEventListener("click", () => {
+        currMonth = icon.id === "prev" ? currMonth - 1 : currMonth + 1;
+
+        if (currMonth < 0 || currMonth > 11) {
+            date = new Date(currYear, currMonth, new Date().getDate());
+            currYear = date.getFullYear();
+            currMonth = date.getMonth();
+        } else {
+            date = new Date();
+        }
+        renderCalendar();
+    });
+});
+
+function changeStatus(status, day) {
+    let input = prompt("Please enter status(ordered,fixing,free):", status)
+    if (input !== "ordered" && input !== "fixing" && input !== "free") alert("wronginput")
+    else {
+        let token = JSON.parse(localStorage.getItem("token"));
+        console.log(token)
+        let url = window.location.search
+        let urlParams = new URLSearchParams(url);
+        let homeid = urlParams.get('id')
+        let inputdate = new Date(currYear, currMonth, day+1).toISOString().slice(0,10);
+        let datesent = {
+            "day": inputdate,
+            "home": {
+                "id":homeid
+            },
+            "status": {
+                "name":input.toUpperCase()
+            }
+        }
+        console.log(datesent)
+        $.ajax({
+            headers: {
+                "Authorization": "Bearer" + token
+            },
+            contentType: "application/json",
+            method: "PATCH",
+            url: "http://localhost:8080/homeday",
+            data: JSON.stringify(datesent),
+            success:renderCalendar
+        })
+    }
 }
