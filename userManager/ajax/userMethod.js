@@ -150,3 +150,9 @@ function showTopHomeRental() {
     });
 }
 showTopHomeRental();
+function goOrder(){
+    let url = window.location.search
+    let urlParams = new URLSearchParams(url);
+    let homeId = urlParams.get('id')
+    window.open("makeOrder.html?id=" + homeId)
+}

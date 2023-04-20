@@ -37,12 +37,12 @@ function showListHouseOfFormUser() {
                                     <div class="item-thumb">`
 
                 if (foreseen[i].pictures.length > 0)
-                    content += `<a href="/ownerManager/homeDetail.html?id=${foreseen[i].id}"><img src="${foreseen[i].pictures[0].src}"></a>`
-                else content += `<a href="/ownerManager/homeDetail.html?id=${foreseen[i].id}"><img src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Queen_Boudica_by_John_Opie.jpg"></a>`
+                    content += `<a href="showHomeDetailUser.html?id=${foreseen[i].id}"><img src="${foreseen[i].pictures[0].src}"></a>`
+                else content += `<a href="showHomeDetailUser.html?id=${foreseen[i].id}"><img src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Queen_Boudica_by_John_Opie.jpg"></a>`
 
                 content += `</div>
                                     <div class="item-entry overflow">
-                                        <h5><a href="/ownerManager/homeDetail.html?id=${foreseen[i].id}">${foreseen[i].name}</a></h5>
+                                        <h5><a href="showHomeDetailUser.html?id=${foreseen[i].id}">${foreseen[i].name}</a></h5>
                                         <div class="dot-hr"></div>`
                 if (foreseen[i].types.length > 0)
                     content += `
