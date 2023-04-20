@@ -64,7 +64,7 @@ function addNewHome() {
         data: JSON.stringify(newHome),
         url: "http://localhost:8080/homes/create",
         success() {
-            showAllHome()
+            window.open("listHouseUser.html")
         }
     });
     event.preventDefault();
