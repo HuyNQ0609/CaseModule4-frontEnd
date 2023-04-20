@@ -46,15 +46,15 @@ function showListHouseOfFormUser() {
                                         <div class="dot-hr"></div>`
                 if (foreseen[i].types.length > 0)
                     content += `
-                                        <span class="pull-left"><b>Home type: </b>${foreseen[i].types[0].name}</span>
+                                        <span class="pull-left"><b>Home type:</b><br>${foreseen[i].types[0].name}</span>
                                         `
 
                 content += `
                                         <span class="proerty-price pull-right">${foreseen[i].price} VND</span>
                                         <p style="display: none;">${foreseen[i].description}</p>
                                         <div class="property-icon">
-                                            <img src="assets/img/icon/bed.png" alt="">${foreseen[i].numberOfBathroom}|
-                                            <img src="assets/img/icon/shawer.png" alt="">${foreseen[i].numberOfBedroom}
+                                            <img src="assets/img/icon/bed.png" alt="">&nbsp;${foreseen[i].numberOfBathroom}|
+                                            <img src="assets/img/icon/shawer.png" alt="">&nbsp;${foreseen[i].numberOfBedroom}
                                         </div>
                                     </div>
                                 </div>
@@ -84,7 +84,8 @@ function showTopRental() {
             for (let i = 0; i < result.length-1 ; i++) {
                 content += `<li>
                                     <div class="col-md-3 col-sm-3 col-xs-3 blg-thumb p0">
-                                        <a href="../showHomeDetailUser.html?id=${result[i].id}}"><img src="../image/photo1.png" alt="..."></a>
+                                        <a href="../showHomeDetailUser.html?id=${result[i].id}}">
+                                        <img src="${result[i].pictures[0].src}" alt="..."></a>
                                     </div>
                                     <div class="col-md-8 col-sm-8 col-xs-8 blg-entry">
                                         <h6><a href="single.html">${result[i].name}</a></h6>

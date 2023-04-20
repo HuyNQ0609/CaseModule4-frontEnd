@@ -241,18 +241,18 @@
                                 <fieldset class="padding-5">
                                     <div class="row">
                                         <div class="col-xs-6">
-                                            <label for="mindate">MinPrice</label>
-                                            <input name="mindate" type="number" class="form-control" onchange="showListHouseOfFormUser()" id="minPrice">
+                                            <label for="mindateOwner">MinPrice</label>
+                                            <input name="mindate" type="number" class="form-control" onchange="showListHouseOfFormUser()" id="minPriceOwner">
                                             <br/>
-                                            <label for="maxdate">MaxPrice</label>
-                                            <input name="maxdate" type="number" class="form-control" onchange="showListHouseOfFormUser()" id="maxPrice">
+                                            <label for="maxdateOwner">MaxPrice</label>
+                                            <input name="maxdate" type="number" class="form-control" onchange="showListHouseOfFormUser()" id="maxPriceOwner">
                                         </div>
                                         <div class="col-xs-6">
-                                            <label for="mindate">Mindate</label>
-                                            <input name="mindate" type="date" class="form-control" onchange="showListHouseOfFormUser()" id="mindate">
+                                            <label for="mindateOwner">Mindate</label>
+                                            <input name="mindate" type="date" class="form-control" onchange="showListHouseOfFormUser()" id="mindateOwner">
                                             <br/>
-                                            <label for="maxdate">Maxdate</label>
-                                            <input name="maxdate" type="date" class="form-control" onchange="showListHouseOfFormUser()" id="maxdate">
+                                            <label for="maxdateOwner">Maxdate</label>
+                                            <input name="maxdate" type="date" class="form-control" onchange="showListHouseOfFormUser()" id="maxdateOwner">
                                         </div>
                                     </div>
                                 </fieldset>
@@ -260,19 +260,19 @@
                                 <fieldset class="padding-5">
                                     <div class="row">
                                         <div class="col-xs-6">
-                                                <label for="minbath">Min Bath</label>
-                                                <input name="minbath" type="number" class="form-control" onchange="showListHouseOfFormUser()" id="minbath">
+                                                <label for="minbathOwner">Min Bath</label>
+                                                <input name="minbath" type="number" class="form-control" onchange="showListHouseOfFormUser()" id="minbathOwner">
                                                 <br/>
-                                                <label for="maxbath">Max Bath</label>
-                                                <input name="maxbath" type="number" class="form-control" onchange="showListHouseOfFormUser()" id="maxbath">
+                                                <label for="maxbathOwner">Max Bath</label>
+                                                <input name="maxbath" type="number" class="form-control" onchange="showListHouseOfFormUser()" id="maxbathOwner">
                                         </div>
 
                                         <div class="col-xs-6">
-                                                <label for="minbed">Min bed</label>
-                                                <input name="minbed" type="number" class="form-control" onchange="showListHouseOfFormUser()" id="minbed">
+                                                <label for="minbedOwner">Min bed</label>
+                                                <input name="minbed" type="number" class="form-control" onchange="showListHouseOfFormUser()" id="minbedOwner">
                                                 <br/>
-                                                <label for="maxbed">Max bed</label>
-                                                <input name="maxbed" type="number" class="form-control" onchange="showListHouseOfFormUser()" id="maxbed">
+                                                <label for="maxbedOwner">Max bed</label>
+                                                <input name="maxbed" type="number" class="form-control" onchange="showListHouseOfFormUser()" id="maxbedOwner">
                                         </div>
                                     </div>
                                 </fieldset>
@@ -286,6 +286,7 @@
                         </div>
                         <div class="panel-body recent-property-widget">
                             <ul id="topHomeRental">
+
                             </ul>
                         </div>
                     </div>
@@ -337,7 +338,7 @@
                 <!--------- show List ----------->
 
                 <div class="col-md-12 clear">
-                    <div id="list-type" class="proerty-th">
+                    <div id="listHomeOwner" class="proerty-th">
                     </div>
                 </div>
                 <div class="col-md-12">
@@ -520,6 +521,6 @@
 <script src="assets/js/price-range.js"></script>
 <script src="assets/js/main.js"></script>
 
-<script src="ajax/homeUser.js"></script>
+<script src="ajax/homeOwner.js"></script>
 </body>
 </html>
