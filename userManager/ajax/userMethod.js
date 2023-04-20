@@ -130,10 +130,11 @@ function showTopHomeRental() {
         success: function (result) {
             let content = "";
 
-            for (let i = 0; i < result.length-1 ; i++) {
+            for (let i = 0; i < result.length; i++) {
                 content += `<li>
                                     <div class="col-md-3 col-sm-3 col-xs-3 blg-thumb p0">
-                                        <a href="#"><img src="../image/photo1.png" alt="..."></a>
+                                        <a href="..//showHomeDetailUser.html?id=${result[i].id}">
+                                        <img src="${result[i].pictures.src}" alt="..."></a>
                                     </div>
                                     <div class="col-md-8 col-sm-8 col-xs-8 blg-entry">
                                         <h6><a href="single.html">${result[i].name}</a></h6>
