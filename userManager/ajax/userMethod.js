@@ -115,3 +115,37 @@ function showHomeDetailUser() {
     })
 }
 showHomeDetailUser()
+
+function showTopHomeRental() {
+    let token = JSON.parse(localStorage.getItem("token"));
+    console.log(token)
+    $.ajax({
+        headers: {
+            "Authorization": "Bearer" + token,
+            'Content-Type': 'application/json'
+        },
+        url: "http://localhost:8080/homes/showTopHome",
+        type: "GET",
+        dataType: "json",
+        success: function (result) {
+            let content = "";
+
+            for (let i = 0; i < result.length-1 ; i++) {
+                content += `<li>
+                                    <div class="col-md-3 col-sm-3 col-xs-3 blg-thumb p0">
+                                        <a href="#"><img src="../image/photo1.png" alt="..."></a>
+                                    </div>
+                                    <div class="col-md-8 col-sm-8 col-xs-8 blg-entry">
+                                        <h6><a href="single.html">${result[i].name}</a></h6>
+                                        <span class="property-price">${result[i].price}</span>
+                                    </div>
+                            </li>`
+            }
+            document.getElementById('topHome').innerHTML = content
+        },
+        error: function (xhr, status, error) {
+            console.error("Error: " + error);
+        }
+    });
+}
+showTopHomeRental();
