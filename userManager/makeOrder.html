@@ -12,6 +12,8 @@
         <meta name="author" content="Kimarotec">
         <meta name="keyword" content="html5, css, bootstrap, property, real-estate theme , bootstrap template">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="assets/css/makeOrderCalendar.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
 
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800' rel='stylesheet' type='text/css'>
 
@@ -34,6 +36,7 @@
         <link rel="stylesheet" href="assets/css/owl.transitions.css">
         <link rel="stylesheet" href="assets/css/style.css">
         <link rel="stylesheet" href="assets/css/responsive.css">
+
     </head>
     <body>
 
@@ -229,7 +232,7 @@
                                 <div id="inputdate">
                                     <div class="form-group">
                                         <label>Date <small> <button onclick="inputDate()">(Press to duplicate input form)</button></small></label>
-                                        <input name="date" type="date" class="form-control" id="date">
+                                        <input name="orderDate" type="date" class="form-control" id="orderDate">
                                     </div>
                                 </div>
 
@@ -239,8 +242,29 @@
                                 </div>
                                 
                             </div>
- 
-                    
+
+
+                            <div class="wrapper">
+                                <header>
+                                    <p class="current-date"></p>
+                                    <div class="icons">
+                                        <span id="prev" class="material-symbols-rounded">chevron_left</span>
+                                        <span id="next" class="material-symbols-rounded">chevron_right</span>
+                                    </div>
+                                </header>
+                                <div class="calendar">
+                                    <ul class="weeks">
+                                        <li>Sun</li>
+                                        <li>Mon</li>
+                                        <li>Tue</li>
+                                        <li>Wed</li>
+                                        <li>Thu</li>
+                                        <li>Fri</li>
+                                        <li>Sat</li>
+                                    </ul>
+                                    <ul class="days"></ul>
+                                </div>
+                            </div>
                             
                             
                     </form>
@@ -406,6 +430,7 @@
         <script src="assets/js/price-range.js"></script>
 
         <script src="assets/js/main.js"></script>
+
     <script src="ajax/orderAjax.js"></script>
     </body>
 </html>
