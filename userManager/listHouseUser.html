@@ -233,35 +233,7 @@
                                 <fieldset>
                                     <div class="row">
                                         <div class="col-xs-12">
-                                            <input type="text" class="form-control" placeholder="Key word">
-                                        </div>
-                                    </div>
-                                </fieldset>
-
-                                <fieldset>
-                                    <div class="row">
-                                        <div class="col-xs-6">
-
-                                            <select id="lunchBegins" class="selectpicker" data-live-search="true"
-                                                    data-live-search-style="begins" title="Select Your City">
-
-                                                <option>New york, CA</option>
-                                                <option>Paris</option>
-                                                <option>Casablanca</option>
-                                                <option>Tokyo</option>
-                                                <option>Marraekch</option>
-                                                <option>kyoto , shibua</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-xs-6">
-
-                                            <select id="basic" class="selectpicker show-tick form-control">
-                                                <option> -Status-</option>
-                                                <option>Rent</option>
-                                                <option>Boy</option>
-                                                <option>used</option>
-
-                                            </select>
+                                            <input type="text" class="form-control" id="addressSearch" onchange="showListHouseOfFormUser()" placeholder="address">
                                         </div>
                                     </div>
                                 </fieldset>
@@ -269,20 +241,18 @@
                                 <fieldset class="padding-5">
                                     <div class="row">
                                         <div class="col-xs-6">
-                                            <label for="price-range">Price range ($):</label>
-                                            <input type="text" class="span2" value="" data-slider-min="0"
-                                                   data-slider-max="600" data-slider-step="5"
-                                                   data-slider-value="[0,450]" id="price-range"><br/>
-                                            <b class="pull-left color">2000$</b>
-                                            <b class="pull-right color">100000$</b>
+                                            <label for="mindate">MinPrice</label>
+                                            <input name="mindate" type="number" class="form-control" onchange="showListHouseOfFormUser()" id="minPrice">
+                                            <br/>
+                                            <label for="maxdate">MaxPrice</label>
+                                            <input name="maxdate" type="number" class="form-control" onchange="showListHouseOfFormUser()" id="maxPrice">
                                         </div>
                                         <div class="col-xs-6">
-                                            <label for="property-geo">Property geo (m2) :</label>
-                                            <input type="text" class="span2" value="" data-slider-min="0"
-                                                   data-slider-max="600" data-slider-step="5"
-                                                   data-slider-value="[50,450]" id="property-geo"><br/>
-                                            <b class="pull-left color">40m</b>
-                                            <b class="pull-right color">12000m</b>
+                                            <label for="mindate">Mindate</label>
+                                            <input name="mindate" type="date" class="form-control" onchange="showListHouseOfFormUser()" id="mindate">
+                                            <br/>
+                                            <label for="maxdate">Maxdate</label>
+                                            <input name="maxdate" type="date" class="form-control" onchange="showListHouseOfFormUser()" id="maxdate">
                                         </div>
                                     </div>
                                 </fieldset>
@@ -290,22 +260,19 @@
                                 <fieldset class="padding-5">
                                     <div class="row">
                                         <div class="col-xs-6">
-                                            <label for="price-range">Min baths :</label>
-                                            <input type="text" class="span2" value="" data-slider-min="0"
-                                                   data-slider-max="600" data-slider-step="5"
-                                                   data-slider-value="[250,450]" id="min-baths"><br/>
-                                            <b class="pull-left color">1</b>
-                                            <b class="pull-right color">120</b>
+                                                <label for="minbath">Min Bath</label>
+                                                <input name="minbath" type="number" class="form-control" onchange="showListHouseOfFormUser()" id="minbath">
+                                                <br/>
+                                                <label for="maxbath">Max Bath</label>
+                                                <input name="maxbath" type="number" class="form-control" onchange="showListHouseOfFormUser()" id="maxbath">
                                         </div>
 
                                         <div class="col-xs-6">
-                                            <label for="property-geo">Min bed :</label>
-                                            <input type="text" class="span2" value="" data-slider-min="0"
-                                                   data-slider-max="600" data-slider-step="5"
-                                                   data-slider-value="[250,450]" id="min-bed"><br/>
-                                            <b class="pull-left color">1</b>
-                                            <b class="pull-right color">120</b>
-
+                                                <label for="minbed">Min bed</label>
+                                                <input name="minbed" type="number" class="form-control" onchange="showListHouseOfFormUser()" id="minbed">
+                                                <br/>
+                                                <label for="maxbed">Max bed</label>
+                                                <input name="maxbed" type="number" class="form-control" onchange="showListHouseOfFormUser()" id="maxbed">
                                         </div>
                                     </div>
                                 </fieldset>

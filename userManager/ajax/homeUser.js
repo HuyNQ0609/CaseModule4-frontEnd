@@ -1,9 +1,30 @@
 function showListHouseOfFormUser() {
+    let add = document.getElementById("addressSearch").value
+    let minprice = document.getElementById("minPrice").value
+    let maxprice = document.getElementById("maxPrice").value
+    let minbed = document.getElementById("minbed").value
+    let maxbed = document.getElementById("maxbed").value
+    let minbath = document.getElementById("minbath").value
+    let maxbath = document.getElementById("maxbath").value
+    let mindate = document.getElementById("mindate").value
+    let maxdate = document.getElementById("maxdate").value
+    let form = {
+        minNumberOfBathroom: minbath,
+        maxNumberOfBathroom: maxbath,
+        minNumberOfBedroom: minbed,
+        maxNumberOfBedroom: maxbed,
+        address: add,
+        priceMin: minprice,
+        priceMax: maxprice,
+        minDate: mindate,
+        maxDate: maxdate
+    }
     $.ajax({
         // type: get, post, put or delete
         type: "GET",
         // url: link
         url: "http://localhost:8080/homes/search",
+        data:form,
         // processing when calling data successfully
         success: function (foreseen) {
             console.log(foreseen);
@@ -44,9 +65,5 @@ function showListHouseOfFormUser() {
     });
     event.preventDefault();
 }
+
 showListHouseOfFormUser();
-function top5(){
-    $.ajax({
-        type:""
-    })
-}
